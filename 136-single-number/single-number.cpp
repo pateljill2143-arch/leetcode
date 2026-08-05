@@ -18,6 +18,6 @@ public:
                 return nums[i];
         }
 
-        return {};
+        return -1;
     }
 };
