@@ -1,0 +1,17 @@
+class Solution {
+public:
+    int lengthOfLongestSubstring(string s) {
+        int n = s.size();
+        int maxLen = 0;
+
+        for (int i = 0; i < n; i++) {
+            vector<bool> seen(256, false);
+            for (int j = i; j < n; j++) {
+                if (seen[s[j]]) break;
+                seen[s[j]] = true;
+                maxLen = max(maxLen, j - i + 1);
+            }
+        }
+        return maxLen;
+    }
+};
